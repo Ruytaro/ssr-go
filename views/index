@@ -1,0 +1,16 @@
+{{define "content"}}
+    <h1>{{.Title}}</h1>
+    <p>{{.Message}}</p>
+    
+    {{if .Users}}
+        <ul>
+            {{range .Users}}
+                <li>{{.Name}} ({{.Email}})</li>
+            {{end}}
+        </ul>
+    {{else}}
+        <p>No users found</p>
+    {{end}}
+{{end}}
+
+{{template "base" .}}
